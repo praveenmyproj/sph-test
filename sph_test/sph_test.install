@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * {@inheritdoc}
+ */
+function sph_test_uninstall() {
+  // Delete all nodes of given content type.
+  $entityTypeManager = \Drupal::entityTypeManager();
+  $nodeStorage = $entityTypeManager->getStorage('node');
+  $nodes = $nodeStorage->loadByProperties(['type' => 'products']);
+  $nodeStorage->delete($nodes);
+
+  // Delete content type.
+  $type = $entityTypeManager->getStorage('node_type')->load('products');
+  $type->delete();
+
+  $styles = ImageStyle::load('product_image');
+  $styles->flush();
+  $styles->delete();
+}

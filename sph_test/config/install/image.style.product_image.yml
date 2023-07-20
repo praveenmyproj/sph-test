@@ -1,0 +1,15 @@
+uuid: 7a2018e2-8748-413f-a1b8-2025d22856e6
+langcode: en
+status: true
+dependencies: {  }
+name: product_image
+label: 'Product Image'
+effects:
+  dfb50bb8-e371-4008-846f-37d1d21438a2:
+    uuid: dfb50bb8-e371-4008-846f-37d1d21438a2
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: 300
+      upscale: true

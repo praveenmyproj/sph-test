@@ -1,0 +1,4 @@
+sph-test:
+  css:
+    theme:
+      css/sph_test.css: {}

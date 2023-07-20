@@ -1,0 +1,25 @@
+<?php
+
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function sph_test_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $node = $variables['elements']['#node'];
+  if ($node->getType() == 'products') {
+    $suggestions[] = 'products';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sph_test_theme($existing, $type, $theme, $path) {
+  $file = [
+    'products' => $existing['node'],
+  ];
+  $file['products']["theme path"] = $path;
+  $file['products']['template'] = 'products';
+  $file['products']["path"] = $path . '/templates';
+  return $file;
+}

@@ -1,0 +1,16 @@
+.node__content {
+  display: flex;
+  border-right: 5px dotted #000;
+}
+
+.col-md-3 {
+  width: 33.333%;
+}
+
+.col-md-6 {
+  width: 66.666%;
+}
+
+#block-sphtestblock {
+  margin-top: 10rem;
+}

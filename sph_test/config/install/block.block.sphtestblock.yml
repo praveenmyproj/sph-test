@@ -1,0 +1,28 @@
+uuid: 66c8bba9-c439-4f6d-82a5-417bb4974d58
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sph_test
+  theme:
+    - olivero
+id: sphtestblock
+theme: olivero
+region: sidebar
+weight: 0
+provider: null
+plugin: sph_test_block
+settings:
+  id: sph_test_block
+  label: 'Sph Test Block'
+  label_display: '0'
+  provider: sph_test
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      products: products
